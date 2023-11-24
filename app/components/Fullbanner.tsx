@@ -5,7 +5,7 @@ import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import Link from "next/link";
 
-export default function Fullbanner({images}) {
+export default function Fullbanner({images}: any) {
     return (
         <section className="fullbanner w-full top-0 h-[500px] mx-auto mb-16 overflow-hidden">
             <Swiper
