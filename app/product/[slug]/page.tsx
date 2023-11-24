@@ -8,15 +8,15 @@ import { Star, Truck } from "lucide-react";
 
 async function getData(slug: string) {
   const query = `*[_type == "product" && slug.current == "${slug}"][0] {
-        _id,
-          images,
-          price,
-          name,
-          description,
-          "slug": slug.current,
-          "categoryName": category->name,
-          price_id
-      }`;
+      _id,
+      images,
+      price,
+      name,
+      description,
+      "slug": slug.current,
+      "categoryName": category->name,
+      price_id
+  }`;
 
   const data = await client.fetch(query);
 
@@ -34,7 +34,7 @@ export default async function ProductPage({
 
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-screen-xl px-4 md:px-8">
+      <div className="mx-auto max-w-screen-xl px-4 md:px-8  py-16">
         <div className="grid gap-8 md:grid-cols-2">
           <ImageGallery images={data.images} />
 
@@ -101,7 +101,13 @@ export default async function ProductPage({
             </div>
 
             <p className="mt-12 text-base text-gray-500 tracking-wide">
-                {data.description}
+                {data.description.split('\n').map((item, index) => {
+                  return (
+                    <>
+                      {item}
+                    </>
+                  )
+                })}
             </p>
           </div>
         </div>

@@ -17,3 +17,14 @@ export interface FullProduct {
     description: string;
     price_id: string;
 }
+
+export interface FullbannerItem {
+    _id: string;
+    title: string;
+    description: string;
+    image: string;
+    title_color: string;
+    description_color: string;
+    link: string
+    is_visible?: boolean;
+}

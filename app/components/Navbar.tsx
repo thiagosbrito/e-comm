@@ -17,8 +17,8 @@ export default function Navbar() {
   const pathname = usePathname();
   const { handleCartClick } = useShoppingCart();
   return (
-    <header className="mb-8 border-b">
-      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
+    <header className="border-b sticky top-0 bg-white z-30 shadow-2xl">
+      <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl mb-0">
         <Link href="/">
           <h1 className="text-2xl md:text-4xl font-bold">
             E<span className="text-primary">-Comm</span>
@@ -47,9 +47,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="flex divide-x border-r sm:border-l">
+        <div className="flex divide-x">
           <Button
-            variant={"outline"}
+            variant={"ghost"}
             onClick={() => handleCartClick()}
             className="flex flex-col gap-y-1.5 h-12 w-12 sm:h-20 sm:w-20 md:h-24 md:w-24 rounded-none"
           >
